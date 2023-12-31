@@ -6,6 +6,6 @@
 /**
  * This package contains modules related to line breaking.
  *
- * @version 0.0
+ * @version 0.1
  */
 package com.github.sttk.linebreak;
