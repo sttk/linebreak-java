@@ -24,7 +24,7 @@ jobs:
         native-image-job-reports: 'true'
     - name: Build and test
       run: mvn package
-    - name: Test with trace agent.
+    - name: Test with trace agent
       run: mvn -Ptrace test
     - name: Native test
       run: mvn -Pnative test
