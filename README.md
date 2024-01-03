@@ -20,9 +20,13 @@ import com.github.sttk.linebreak.LineIter;
 
 This library supports native build with GraalVM.
 
-> See the following pages to setup native build environment on Linux/macOS or Windows.
-> - [Setup native build environment on Linux/macOS](https://www.graalvm.org/latest/reference-manual/native-image/)
-> - [Setup native build environment on Windows](https://www.graalvm.org/latest/docs/getting-started/windows/#prerequisites-for-native-image-on-windows)
+See the following pages to setup native build environment on Linux/macOS or Windows.
+- [Setup native build environment on Linux/macOS](https://www.graalvm.org/latest/reference-manual/native-image/)
+- [Setup native build environment on Windows](https://www.graalvm.org/latest/docs/getting-started/windows/#prerequisites-for-native-image-on-windows)
+
+And see the following pages to build native image with Maven or Gradle.
+- [Native image building with Maven plugin](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html)
+- [Native image building with Gradle plugin](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
 
 This library uses [ICU4J](https://icu.unicode.org/home) and [JNA](https://github.com/java-native-access/jna).
 Since the ICU4J's jar file includes data files, it is required to write those data files in `resource-config.json` which is one of native build configuration files.
@@ -30,10 +34,6 @@ And since JNA uses JNI, reflection and so on, it is also required to write confi
 
 These configuration files can be generated automatically with [Tracing Agent](https://www.graalvm.org/latest/reference-manual/native-image/metadata/AutomaticMetadataCollection/).
 Therefore, the build tool `build.sh` in this library includes an option `trace-test` to run unit tests with the Trace Agent.
-
-> See the following pages to build native image with Maven or Gradle.
-> - [Native image building with Maven plugin](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html)
-> - [Native image building with Gradle plugin](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
 
 
 ## Supporting JDK versions
