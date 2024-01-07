@@ -1,6 +1,35 @@
-# [linebreak-java][repo-url] [![GitHub.io][io-img]][io-url] [![CI Status][ci-img]][ci-url] [![MIT License][mit-img]][mit-url]
+# [linebreak-java][repo-url] [![Maven Central][mvn-img]][mvn-url] [![GitHub.io][io-img]][io-url] [![CI Status][ci-img]][ci-url] [![MIT License][mit-img]][mit-url]
 
 A Java library for breaking a given text into lines within a specified width.
+
+## Install
+
+This package can be installed from [Maven Central Repository][mvn-url].
+
+The examples of declaring that repository and the dependency on this package in Maven `pom.xml` and Gradle `build.gradle` are as follows:
+
+### for Maven
+
+```
+  <dependencies>
+    <dependency>
+      <groupId>io.github.sttk</groupId>
+      <artifactId>linebreak</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+  </dependencies>
+```
+
+### for Gradle
+
+```
+repositories {
+  mavenCentral()
+}
+dependencies {
+  implementation 'io.github.sttk:linebreak:0.1.0'
+}
+```
 
 ## Usage
 
@@ -53,6 +82,8 @@ See the file LICENSE in this distribution for more details.
 
 
 [repo-url]: https://github.com/sttk/linebreak-java
+[mvn-img]: https://img.shields.io/badge/maven_central-0.1.0-276bdd.svg
+[mvn-url]: https://central.sonatype.com/artifact/io.github.sttk/linebreak/0.1.0
 [io-img]: https://img.shields.io/badge/github.io-Javadoc-4d7a97.svg
 [io-url]: https://sttk.github.io/linebreak-java/
 [ci-img]: https://github.com/sttk/linebreak-java/actions/workflows/java-ci.yml/badge.svg?branch=main
