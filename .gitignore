@@ -13,5 +13,6 @@ test-results-native/
 .DS_Store
 Thumbs.db
 
-# GraalVM native build configuration files
-src/main/resources/META-INF/native-image
+# GraalVM native trace output directory
+/native-trace/
+/src/test/resources/META-INF/native-image/resource-config.json
