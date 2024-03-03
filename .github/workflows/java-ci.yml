@@ -24,7 +24,9 @@ jobs:
         native-image-job-reports: 'true'
     - name: Build and test
       run: mvn package
-    - name: Test with trace agent
-      run: mvn -Ptrace test
+    - name: Prepare native test
+      run: |
+        mkdir -p src/test/resources/META-INF/native-image/
+        cp .ci/${{ matrix.os }}/resource-config.json src/test/resources/META-INF/native-image/
     - name: Native test
       run: mvn -Pnative test

@@ -5,13 +5,14 @@
 *.ear
 hs_err_pid*
 
-# Directories
-target/
-test-results-native/
-
 # OS generating files
 .DS_Store
 Thumbs.db
 
-# GraalVM native build configuration files
-src/main/resources/META-INF/native-image
+# Directories and a file generated on build
+/target/
+/test-results-native/
+/src/test/resources/META-INF/native-image/resource-config.json
+
+# GraalVM native trace output directory
+/native-trace/

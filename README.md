@@ -61,9 +61,22 @@ This library uses [ICU4J](https://icu.unicode.org/home) and [JNA](https://github
 Since the ICU4J's jar file includes data files, it is required to write those data files in `resource-config.json` which is one of native build configuration files.
 And since JNA uses JNI, reflection and so on, it is also required to write configurations into native build configuration files: `jni-config.json`, `proxy-config.json`, `reflect-config.json` and `resource-config.json`.
 
-These configuration files can be generated automatically with [Tracing Agent](https://www.graalvm.org/latest/reference-manual/native-image/metadata/AutomaticMetadataCollection/).
-Therefore, the build tool `build.sh` in this library includes an option `trace-test` to run unit tests with the Trace Agent.
+These configuration files are included in the `src/main/resources/META-INF/native-image/com.github.sttk.linebreak/` directory.
+But only one configuration, JNA dynamic link library, is not included because it is platform-dependent.
+Please include the configuration of JNA dynamic link library for your platform into `reflect-config.json`.
+That configuration's format is as follows:
 
+```
+{
+  "resources":{
+  "includes":[ ... , {
+    "pattern":"\\Qcom/sun/jna/<osname>-<processor>/libjnidispatch.<extension>\\E"
+  }]},
+  "bundles":[ ... ]
+}
+```
+
+Here, the `<osname>`, `<processor>`, and `<extension>` can be obtained from the `attribute` element named `"Bundle-NativeCode"` in [JNA build file](https://github.com/java-native-access/jna/blob/master/build.xml). Or, download this project and run `./build.sh trace-test` to generate `reflect-config.json` and other configuration files.
 
 ## Supporting JDK versions
 

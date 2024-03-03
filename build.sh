@@ -62,7 +62,6 @@ if [[ "$#" == "0" ]]; then
   clean
   jar
   javadoc
-  trace_test
   native_test
 else
   for a in "$@"; do
