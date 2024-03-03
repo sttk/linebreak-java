@@ -55,14 +55,6 @@
   "fields":[{"name":"value"}]
 },
 {
-  "name":"org.apache.maven.surefire.junitplatform.JUnitPlatformProvider",
-  "methods":[{"name":"<init>","parameterTypes":["org.apache.maven.surefire.api.provider.ProviderParameters"] }]
-},
-{
-  "name":"org.apiguardian.api.API",
-  "queryAllPublicMethods":true
-},
-{
   "name":"sun.security.provider.NativePRNG",
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
 },
