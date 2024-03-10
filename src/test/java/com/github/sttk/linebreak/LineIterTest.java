@@ -83,7 +83,7 @@ public class LineIterTest {
   }
 
   @Test
-  void testNext_breakAtLineBreakOppotunity() {
+  void testNext_breakAtLineBreakOpportunity() {
     var text = "1234567890 abcdefghij";
     var iter = new LineIter(text, 20);
 
@@ -140,7 +140,7 @@ public class LineIterTest {
   }
 
   @Test
-  void testNext_thereIsNoLineBreakOppotunity() {
+  void testNext_thereIsNoLineBreakOpportunity() {
     var text = "12345678901234567890abcdefghij";
     var iter = new LineIter(text, 20);
 

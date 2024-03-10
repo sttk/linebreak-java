@@ -114,7 +114,7 @@ public class LineIter {
 
     while (this.scanner.hasNext()) {
       int cp = this.scanner.next();
-      lineBreakOppotunity(cp, state);
+      lineBreakOpportunity(cp, state);
 
       if (state.lboType == LboType.Break) {
         line = trimRightAndToString(this.buffer);
@@ -246,7 +246,7 @@ public class LineIter {
     return line;
   }
 
-  void lineBreakOppotunity(int codepoint, LboState state) {
+  void lineBreakOpportunity(int codepoint, LboState state) {
     state.lboPrev = state.lboType;
 
     switch (codepoint) {
@@ -255,10 +255,10 @@ public class LineIter {
         state.openQuot = (byte)(state.openApos + 1);
         state.lboType = LboType.Before;
       } else { // close
-        state.openQuot = 0;
         if (state.openQuot < state.openApos) {
           state.openApos = 0;
         }
+        state.openQuot = 0;
         state.lboType = LboType.After;
       }
       return;
@@ -267,10 +267,10 @@ public class LineIter {
         state.openApos = (byte)(state.openQuot + 1);
         state.lboType = LboType.Before;
       } else { // close
-        state.openApos = 0;
         if (state.openApos < state.openQuot) {
           state.openQuot = 0;
         }
+        state.openApos = 0;
         state.lboType = LboType.After;
       }
       return;
