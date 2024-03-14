@@ -15,7 +15,7 @@ The examples of declaring that repository and the dependency on this package in 
     <dependency>
       <groupId>io.github.sttk</groupId>
       <artifactId>linebreak</artifactId>
-      <version>0.1.2</version>
+      <version>0.1.3</version>
     </dependency>
   </dependencies>
 ```
@@ -27,7 +27,7 @@ repositories {
   mavenCentral()
 }
 dependencies {
-  implementation 'io.github.sttk:linebreak:0.1.2'
+  implementation 'io.github.sttk:linebreak:0.1.3'
 }
 ```
 
@@ -88,15 +88,15 @@ This framework supports JDK 21 or later.
 
 ## License
 
-Copyright (C) 2023 Takayuki Sato
+Copyright (C) 2023-2024 Takayuki Sato
 
 This program is free software under MIT License.<br>
 See the file LICENSE in this distribution for more details.
 
 
 [repo-url]: https://github.com/sttk/linebreak-java
-[mvn-img]: https://img.shields.io/badge/maven_central-0.1.2-276bdd.svg
-[mvn-url]: https://central.sonatype.com/artifact/io.github.sttk/linebreak/0.1.2
+[mvn-img]: https://img.shields.io/badge/maven_central-0.1.3-276bdd.svg
+[mvn-url]: https://central.sonatype.com/artifact/io.github.sttk/linebreak/0.1.3
 [io-img]: https://img.shields.io/badge/github.io-Javadoc-4d7a97.svg
 [io-url]: https://sttk.github.io/linebreak-java/
 [ci-img]: https://github.com/sttk/linebreak-java/actions/workflows/java-ci.yml/badge.svg?branch=main
