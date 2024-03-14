@@ -11,8 +11,8 @@ public abstract class Terminal {
   private static Terminal INSTANCE = newInstance();
 
   public abstract boolean isNotty(LastErrorException e);
-  public abstract int getSizeX() throws LastErrorException;
-  public abstract int[] getSizeXY() throws LastErrorException;
+  public abstract int getCols() throws LastErrorException;
+  public abstract int[] getSize() throws LastErrorException;
 
   private static Terminal newInstance() {
     String os = System.getProperty("os.name").toLowerCase();
