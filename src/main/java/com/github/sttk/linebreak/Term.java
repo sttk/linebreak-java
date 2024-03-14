@@ -33,7 +33,7 @@ public final class Term {
    */
   public static int getCols() {
     try {
-      return Terminal.getInstance().getSizeX();
+      return Terminal.getInstance().getCols();
     } catch (Exception e) {
       return 80;
     }
@@ -46,8 +46,8 @@ public final class Term {
    */
   public static Size getSize() {
     try {
-      var xy = Terminal.getInstance().getSizeXY();
-      return new Size(xy[0], xy[1]);
+      var size = Terminal.getInstance().getSize();
+      return new Size(size[0], size[1]);
     } catch (Exception e) {
       return new Size(80, 24);
     }

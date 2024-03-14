@@ -29,14 +29,14 @@ class UnixTerminal extends Terminal {
   }
 
   @Override
-  public int getSizeX() throws LastErrorException {
+  public int getCols() throws LastErrorException {
     var ws = new winsize();
     lib.ioctl(FD_STDOUT, TIOCGWINSZ, ws);
     return Short.toUnsignedInt(ws.ws_col);
   }
 
   @Override
-  public int[] getSizeXY() throws LastErrorException {
+  public int[] getSize() throws LastErrorException {
     var ws = new winsize();
     lib.ioctl(FD_STDOUT, TIOCGWINSZ, ws);
     return new int[]{

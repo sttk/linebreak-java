@@ -13,9 +13,9 @@ import java.io.IOException;
 public class TerminalTest {
 
   @Test
-  void testGetSizeX() {
+  void testGetCols() {
     try {
-      int result = Terminal.getInstance().getSizeX();
+      int result = Terminal.getInstance().getCols();
       int[] expected = getTermSizeXY();
       assertThat(result).isEqualTo(expected[0]);
     } catch (LastErrorException e) {
@@ -23,9 +23,21 @@ public class TerminalTest {
     }
   }
 
+  @Test
+  void testGetSize() {
+    try {
+      int[] result = Terminal.getInstance().getSize();
+      int[] expected = getTermSizeXY();
+      assertThat(result[0]).isEqualTo(expected[0]);
+      assertThat(result[1]).isEqualTo(expected[1]);
+    } catch (LastErrorException e) {
+      assertThat(Terminal.getInstance().isNotty(e)).isTrue();
+    }
+  }
+
   public static boolean isTerminal() {
     try {
-      Terminal.getInstance().getSizeX();
+      Terminal.getInstance().getCols();
       return true;
     } catch (LastErrorException e) {
       if (Terminal.getInstance().isNotty(e)) {

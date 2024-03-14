@@ -28,19 +28,22 @@ class WindowsTerminal extends Terminal {
   }
 
   @Override
-  public int getSizeX() throws LastErrorException {
+  public int getCols() throws LastErrorException {
     int h = lib.GetStdHandle(STD_OUTPUT_HANDLE);
     var bi = new CONSOLE_SCREEN_BUFFER_INFO();
     lib.GetConsoleScreenBufferInfo(h, bi);
-    return bi.wSizeX;
+    return bi.wWindowRight - bi.wWindowLeft + 1;
   }
 
   @Override
-  public int[] getSizeXY() throws LastErrorException {
+  public int[] getSize() throws LastErrorException {
     int h = lib.GetStdHandle(STD_OUTPUT_HANDLE);
     var bi = new CONSOLE_SCREEN_BUFFER_INFO();
     lib.GetConsoleScreenBufferInfo(h, bi);
-    return new int[]{bi.wSizeX, bi.wSizeY};
+    return new int[]{
+      bi.wWindowRight - bi.wWindowLeft + 1,
+      bi.wWindowBottom - bi.wWindowTop + 1
+    };
   }
 
   public static class CONSOLE_SCREEN_BUFFER_INFO extends Structure {
