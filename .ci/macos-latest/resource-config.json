@@ -1,7 +1,7 @@
 {
   "resources":{
   "includes":[{
-    "pattern":"\\Qcom/sun/jna/darwin-x86-64/libjnidispatch.jnilib\\E"
+    "pattern":"\\Qcom/sun/jna/darwin-aarch64/libjnidispatch.jnilib\\E"
   }]},
   "bundles":[]
 }
