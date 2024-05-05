@@ -13,6 +13,3 @@ Thumbs.db
 /target/
 /test-results-native/
 /src/test/resources/META-INF/native-image/resource-config.json
-
-# GraalVM native trace output directory
-/native-trace/
