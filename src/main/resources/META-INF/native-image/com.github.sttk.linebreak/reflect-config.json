@@ -1,6 +1,6 @@
 [
 {
-  "name":"com.github.sttk.linebreak.terminal.UnixTerminal$winsize",
+  "name":"com.github.sttk.linebreak.UnixTerminal$winsize",
   "allDeclaredFields":true,
   "fields":[{"name":"OPTIONS"}, {"name":"STRING_ENCODING"}, {"name":"STRUCTURE_ALIGNMENT"}, {"name":"TYPE_MAPPER"}]
 },
@@ -63,7 +63,7 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name":"com.github.sttk.linebreak.terminal.WindowsTerminal$CONSOLE_SCREEN_BUFFER_INFO",
+  "name":"com.github.sttk.linebreak.WindowsTerminal$CONSOLE_SCREEN_BUFFER_INFO",
   "allDeclaredFields":true,
   "fields":[{"name":"OPTIONS"}, {"name":"STRING_ENCODING"}, {"name":"STRUCTURE_ALIGNMENT"}, {"name":"TYPE_MAPPER"}]
 },

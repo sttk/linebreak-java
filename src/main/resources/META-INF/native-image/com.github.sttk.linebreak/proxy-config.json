@@ -1,8 +1,8 @@
 [
   {
-    "interfaces":["com.github.sttk.linebreak.terminal.UnixTerminal$C"]
+    "interfaces":["com.github.sttk.linebreak.UnixTerminal$C"]
   },
   {
-    "interfaces":["com.github.sttk.linebreak.terminal.WindowsTerminal$Kernel32"]
+    "interfaces":["com.github.sttk.linebreak.WindowsTerminal$Kernel32"]
   }
 ]
