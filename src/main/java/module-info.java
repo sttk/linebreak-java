@@ -1,6 +1,6 @@
 /*
  * module-info class.
- * Copyright (C) 2023 Takayuki Sato. All Rights Reserved.
+ * Copyright (C) 2023-2024 Takayuki Sato. All Rights Reserved.
  */
 
 /**
@@ -8,6 +8,7 @@
  */
 module com.github.sttk.linebreak {
   exports com.github.sttk.linebreak;
-  requires com.ibm.icu;
-  requires com.sun.jna;
+  exports com.github.sttk.linebreak.terminal to com.sun.jna;
+  requires transitive com.ibm.icu;
+  requires transitive com.sun.jna;
 }
