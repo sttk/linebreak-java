@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.github.sttk.linebreak","l":"com.github.sttk.linebreak"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.github.sttk.linebreak","l":"com.github.sttk.linebreak"},{"m":"com.github.sttk.linebreak","l":"com.github.sttk.linebreak.terminal"}];updateSearchResults();
