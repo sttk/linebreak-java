@@ -1,10 +1,9 @@
 /*
  * Term class.
- * Copyright (C) 2023 Takayuki Sato. All Rights Reserved.
+ * Copyright (C) 2023-2024 Takayuki Sato. All Rights Reserved.
  */
 package com.github.sttk.linebreak;
 
-import com.github.sttk.linebreak.terminal.Terminal;
 import com.sun.jna.LastErrorException;
 
 /**
@@ -33,7 +32,7 @@ public final class Term {
    */
   public static int getCols() {
     try {
-      return Terminal.getInstance().getCols();
+      return AbstractTerminal.getInstance().getCols();
     } catch (Exception e) {
       return 80;
     }
@@ -46,7 +45,7 @@ public final class Term {
    */
   public static Size getSize() {
     try {
-      var size = Terminal.getInstance().getSize();
+      var size = AbstractTerminal.getInstance().getSize();
       return new Size(size[0], size[1]);
     } catch (Exception e) {
       return new Size(80, 24);

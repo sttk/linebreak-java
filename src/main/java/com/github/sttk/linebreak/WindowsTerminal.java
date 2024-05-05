@@ -1,8 +1,8 @@
 /*
  * WindowTerminal class.
- * Copyright (C) 2023 Takayuki Sato. All Rights Reserved.
+ * Copyright (C) 2023-2024 Takayuki Sato. All Rights Reserved.
  */
-package com.github.sttk.linebreak.terminal;
+package com.github.sttk.linebreak;
 
 import com.sun.jna.Native;
 import com.sun.jna.Structure;
@@ -14,7 +14,7 @@ import java.util.List;
 //import java.io.InputStreamReader;
 //import java.io.IOException;
 
-class WindowsTerminal extends Terminal {
+class WindowsTerminal extends AbstractTerminal {
 
   private Kernel32 lib = Native.load("kernel32", Kernel32.class);
 
@@ -22,13 +22,13 @@ class WindowsTerminal extends Terminal {
   private final int STD_OUTPUT_HANDLE = -11;
 
   @Override
-  public boolean isNotty(LastErrorException e) {
+  boolean isNotty(LastErrorException e) {
     // https://docs.oracle.com/cd/E19455-01/806-2720/msgs-378/index.html
     return (e.getErrorCode() == 6);
   }
 
   @Override
-  public int getCols() throws LastErrorException {
+  int getCols() throws LastErrorException {
     int h = lib.GetStdHandle(STD_OUTPUT_HANDLE);
     var bi = new CONSOLE_SCREEN_BUFFER_INFO();
     lib.GetConsoleScreenBufferInfo(h, bi);
@@ -36,7 +36,7 @@ class WindowsTerminal extends Terminal {
   }
 
   @Override
-  public int[] getSize() throws LastErrorException {
+  int[] getSize() throws LastErrorException {
     int h = lib.GetStdHandle(STD_OUTPUT_HANDLE);
     var bi = new CONSOLE_SCREEN_BUFFER_INFO();
     lib.GetConsoleScreenBufferInfo(h, bi);

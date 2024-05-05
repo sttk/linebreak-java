@@ -1,8 +1,8 @@
 /*
  * UnixTerminal class.
- * Copyright (C) 2023 Takayuki Sato. All Rights Reserved.
+ * Copyright (C) 2023-2024 Takayuki Sato. All Rights Reserved.
  */
-package com.github.sttk.linebreak.terminal;
+package com.github.sttk.linebreak;
 
 import com.sun.jna.Native;
 import com.sun.jna.Structure;
@@ -15,7 +15,7 @@ import java.util.List;
 //import java.io.InputStreamReader;
 //import java.io.IOException;
 
-class UnixTerminal extends Terminal {
+class UnixTerminal extends AbstractTerminal {
 
   private final C lib = Native.load("c", C.class);
 
@@ -23,20 +23,20 @@ class UnixTerminal extends Terminal {
   private final int FD_STDOUT = 1;
 
   @Override
-  public boolean isNotty(LastErrorException e) {
+  boolean isNotty(LastErrorException e) {
     // https://docs.oracle.com/cd/E19455-01/806-2720/msgs-378/index.html
     return (e.getErrorCode() == 25);
   }
 
   @Override
-  public int getCols() throws LastErrorException {
+  int getCols() throws LastErrorException {
     var ws = new winsize();
     lib.ioctl(FD_STDOUT, TIOCGWINSZ, ws);
     return Short.toUnsignedInt(ws.ws_col);
   }
 
   @Override
-  public int[] getSize() throws LastErrorException {
+  int[] getSize() throws LastErrorException {
     var ws = new winsize();
     lib.ioctl(FD_STDOUT, TIOCGWINSZ, ws);
     return new int[]{

@@ -13,6 +13,7 @@ import static com.ibm.icu.lang.UCharacter.EastAsianWidth.FULLWIDTH;
 import static com.ibm.icu.lang.UCharacter.EastAsianWidth.NARROW;
 import static com.ibm.icu.lang.UCharacter.EastAsianWidth.WIDE;
 
+@SuppressWarnings("missing-explicit-ctor")
 public class UnicodeTest {
 
   @DisabledIfEnvironmentVariable(named = "ALLOW_SLOW", matches = "1")
@@ -49,7 +50,7 @@ public class UnicodeTest {
 
   void checkIsSpace(int codepoint) {
     boolean b = Unicode.isSpace(codepoint);
-    switch ((int) codepoint) {
+    switch (codepoint) {
     case 0x09: // HT, CHARACTER TABULATION
     case 0x0A: // LF, LINE FEED
     case 0x0B: // VT, LINE TABULATION
@@ -84,8 +85,8 @@ public class UnicodeTest {
   }
 
   void checkIsPrint(int codepoint) {
-    boolean b = Unicode.isPrint((int) codepoint);
-    switch (Character.getType((int) codepoint)) {
+    boolean b = Unicode.isPrint(codepoint);
+    switch (Character.getType(codepoint)) {
     case Character.CONTROL: // Cc
     case Character.FORMAT: // Cf
     case Character.PRIVATE_USE: // Cp

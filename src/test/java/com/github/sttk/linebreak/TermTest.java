@@ -4,9 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
-import static com.github.sttk.linebreak.terminal.TerminalTest.isTerminal;
-import static com.github.sttk.linebreak.terminal.TerminalTest.getTermSizeXY;
+import static com.github.sttk.linebreak.AbstractTerminalTest.isTerminal;
+import static com.github.sttk.linebreak.AbstractTerminalTest.getTermSizeXY;
 
+@SuppressWarnings("missing-explicit-ctor")
 public class TermTest {
 
   @Test

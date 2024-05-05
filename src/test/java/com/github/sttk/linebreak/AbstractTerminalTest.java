@@ -1,4 +1,4 @@
-package com.github.sttk.linebreak.terminal;
+package com.github.sttk.linebreak;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -10,37 +10,38 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
-public class TerminalTest {
+@SuppressWarnings("missing-explicit-ctor")
+public class AbstractTerminalTest {
 
   @Test
   void testGetCols() {
     try {
-      int result = Terminal.getInstance().getCols();
+      int result = AbstractTerminal.getInstance().getCols();
       int[] expected = getTermSizeXY();
       assertThat(result).isEqualTo(expected[0]);
     } catch (LastErrorException e) {
-      assertThat(Terminal.getInstance().isNotty(e)).isTrue();
+      assertThat(AbstractTerminal.getInstance().isNotty(e)).isTrue();
     }
   }
 
   @Test
   void testGetSize() {
     try {
-      int[] result = Terminal.getInstance().getSize();
+      int[] result = AbstractTerminal.getInstance().getSize();
       int[] expected = getTermSizeXY();
       assertThat(result[0]).isEqualTo(expected[0]);
       assertThat(result[1]).isEqualTo(expected[1]);
     } catch (LastErrorException e) {
-      assertThat(Terminal.getInstance().isNotty(e)).isTrue();
+      assertThat(AbstractTerminal.getInstance().isNotty(e)).isTrue();
     }
   }
 
   public static boolean isTerminal() {
     try {
-      Terminal.getInstance().getCols();
+      AbstractTerminal.getInstance().getCols();
       return true;
     } catch (LastErrorException e) {
-      if (Terminal.getInstance().isNotty(e)) {
+      if (AbstractTerminal.getInstance().isNotty(e)) {
         return false;
       }
       throw e;

@@ -1,9 +1,9 @@
 {
   "resources":{
   "includes":[{
-    "pattern":"\\Qcom/ibm/icu/ICUConfig.properties\\E"
-  }, {
     "pattern":"\\Qcom/ibm/icu/impl/data/icudt74b/uprops.icu\\E"
+  }, {
+    "pattern":"com.ibm.icu:\\Qcom/ibm/icu/ICUConfig.properties\\E"
   }]},
   "bundles":[]
 }
