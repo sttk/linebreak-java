@@ -9,13 +9,14 @@ import com.ibm.icu.lang.UCharacter.EastAsianWidth;
 import com.ibm.icu.lang.UProperty;
 import com.ibm.icu.util.CodePointMap;
 import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * {@code LineIter} is the class that outputs the given string line by line.
  * This class can control the overall line width and the indentation from any
  * desired line.
  */
-public class LineIter {
+public class LineIter implements Iterator<String> {
 
   enum LboType {
     Never,
@@ -94,6 +95,7 @@ public class LineIter {
    *
    * @return  True if the remaining string exists.
    */
+  @Override
   public boolean hasNext() {
     return this.hasNext;
   }
@@ -103,6 +105,7 @@ public class LineIter {
    *
    * @return  A next line string.
    */
+  @Override
   public String next() {
     int limit = this.limit - this.indentCodepointCount;
 
