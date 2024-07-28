@@ -41,7 +41,7 @@ public class LineIter implements Iterator<String> {
   private int lboPos = 0;
   private int limit = 0;
   private String indent = "";
-  private int indentCodepointCount = 0;
+  private int indentWidth = 0;
   private byte openQuot;
   private byte openApos;
   private boolean hasNext = true;
@@ -69,7 +69,7 @@ public class LineIter implements Iterator<String> {
   public void setIndent(String indent) {
     if (indent == null) indent = "";
     this.indent = indent;
-    this.indentCodepointCount = indent.codePointCount(0, indent.length());
+    this.indentWidth = Unicode.getTextWidth(indent);
   }
 
   /**
@@ -107,7 +107,7 @@ public class LineIter implements Iterator<String> {
    */
   @Override
   public String next() {
-    int limit = this.limit - this.indentCodepointCount;
+    int limit = this.limit - this.indentWidth;
 
     if (this.width[0] > limit) {
         int diff = this.width[0] - limit;
