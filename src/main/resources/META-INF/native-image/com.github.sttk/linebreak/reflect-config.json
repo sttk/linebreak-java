@@ -5,6 +5,14 @@
   "fields":[{"name":"OPTIONS"}, {"name":"STRING_ENCODING"}, {"name":"STRUCTURE_ALIGNMENT"}, {"name":"TYPE_MAPPER"}]
 },
 {
+  "name":"com.github.sttk.linebreak.WindowsTerminal$CONSOLE_SCREEN_BUFFER_INFO",
+  "allDeclaredFields":true,
+  "fields":[{"name":"OPTIONS"}, {"name":"STRING_ENCODING"}, {"name":"STRUCTURE_ALIGNMENT"}, {"name":"TYPE_MAPPER"}]
+},
+{
+  "name":"com.sun.jna.win32.DLLCallback"
+},
+{
   "name":"com.sun.jna.CallbackProxy",
   "methods":[{"name":"callback","parameterTypes":["java.lang.Object[]"] }]
 },
@@ -61,13 +69,5 @@
 {
   "name":"sun.security.provider.SHA",
   "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"com.github.sttk.linebreak.WindowsTerminal$CONSOLE_SCREEN_BUFFER_INFO",
-  "allDeclaredFields":true,
-  "fields":[{"name":"OPTIONS"}, {"name":"STRING_ENCODING"}, {"name":"STRUCTURE_ALIGNMENT"}, {"name":"TYPE_MAPPER"}]
-},
-{
-  "name":"com.sun.jna.win32.DLLCallback"
 }
 ]

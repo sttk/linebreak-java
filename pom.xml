@@ -51,7 +51,7 @@
     <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j</artifactId>
-      <version>74.2</version>
+      <version>75.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -67,25 +67,25 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>5.10.2</version>
+      <version>5.11.0-M2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.10.2</version>
+      <version>5.11.0-M2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-launcher</artifactId>
-      <version>1.10.2</version>
+      <version>1.11.0-M2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.25.3</version>
+      <version>3.26.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -194,7 +194,7 @@
                     <dependency>
                       <groupId>org.junit.platform</groupId>
                       <artifactId>junit-platform-launcher</artifactId>
-                      <version>1.9.1</version>
+                      <version>1.11.0-M2</version>
                       <scope>test</scope>
                     </dependency>
                   </dependencies>
@@ -208,6 +208,7 @@
                 <buildArg>-J--add-opens=java.base/java.lang=ALL-UNNAMED</buildArg>
                 <buildArg>--initialize-at-build-time=org.junit.platform.launcher.core.LauncherConfig</buildArg>
                 <buildArg>--initialize-at-build-time=org.junit.jupiter.engine.config.InstantiatingConfigurationParameterConverter</buildArg>
+                <buildArg>--initialize-at-build-time=org.junit.platform.commons.util.LruCache</buildArg>
               </buildArgs>
             </configuration>
           </plugin>

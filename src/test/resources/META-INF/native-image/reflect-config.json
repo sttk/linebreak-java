@@ -1,0 +1,56 @@
+[
+{
+  "name":"com.github.sttk.linebreak.AbstractTerminalTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testGetCols","parameterTypes":[] }, {"name":"testGetSize","parameterTypes":[] }]
+},
+{
+  "name":"com.github.sttk.linebreak.CodepointBufferTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testAdd","parameterTypes":[] }, {"name":"testConstructor_empty","parameterTypes":[] }, {"name":"testCr","parameterTypes":[] }]
+},
+{
+  "name":"com.github.sttk.linebreak.CodepointScannerTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testConstructor_empty","parameterTypes":[] }, {"name":"testConstructor_null","parameterTypes":[] }, {"name":"testNext_asciiChars","parameterTypes":[] }, {"name":"testNext_japaneseChars","parameterTypes":[] }, {"name":"testNext_surrogatePairs","parameterTypes":[] }, {"name":"testSetText_reset","parameterTypes":[] }]
+},
+{
+  "name":"com.github.sttk.linebreak.LineIterTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testBreakPositionAfterIndentWidthIsIncreased","parameterTypes":[] }, {"name":"testBreakPositionIfIndentContainsFullWidthChars","parameterTypes":[] }, {"name":"testContains","parameterTypes":[] }, {"name":"testInit","parameterTypes":[] }, {"name":"testInit_null","parameterTypes":[] }, {"name":"testNext_breakAtLineBreakOpportunity","parameterTypes":[] }, {"name":"testNext_emptyText","parameterTypes":[] }, {"name":"testNext_equalToLineWidth","parameterTypes":[] }, {"name":"testNext_lessThanLineWidth","parameterTypes":[] }, {"name":"testNext_nullText","parameterTypes":[] }, {"name":"testNext_oneCharText","parameterTypes":[] }, {"name":"testNext_oneCharText_lboBreak","parameterTypes":[] }, {"name":"testNext_printLongText","parameterTypes":[] }, {"name":"testNext_removeHeadingSpaceOfEachLine","parameterTypes":[] }, {"name":"testNext_removeSpacesOfAllSpaceLine","parameterTypes":[] }, {"name":"testNext_removeTailingSpaceOfEachLine","parameterTypes":[] }, {"name":"testNext_thereIsNoLineBreakOpportunity","parameterTypes":[] }, {"name":"testNext_tryLongText","parameterTypes":[] }, {"name":"testSetIndent","parameterTypes":[] }, {"name":"testSetIndent_null","parameterTypes":[] }, {"name":"testTrimRightAndToString_buffer","parameterTypes":[] }, {"name":"testTrimRightAndToString_buffer_start_end","parameterTypes":[] }, {"name":"test_japanese","parameterTypes":[] }, {"name":"test_letterWithOfEastAsianWideLetter","parameterTypes":[] }, {"name":"test_lineBreaksOfEastAsianWideLetter","parameterTypes":[] }, {"name":"test_prohibitionsOfLineBreakOfEnglish","parameterTypes":[] }, {"name":"test_prohibitionsOfLineBreakOfEnglish_apos","parameterTypes":[] }, {"name":"test_prohibitionsOfLineBreakOfEnglish_aposAndQuote","parameterTypes":[] }, {"name":"test_prohibitionsOfLineBreakOfEnglish_quot","parameterTypes":[] }, {"name":"test_prohibitionsOfLineBreakOfEnglish_quoteAndApos","parameterTypes":[] }, {"name":"test_prohibitionsOfLineBreakOfJapanese_end","parameterTypes":[] }, {"name":"test_prohibitionsOfLineBreakOfJapanese_start","parameterTypes":[] }, {"name":"test_setIndentToLongText","parameterTypes":[] }, {"name":"test_textContainsNonPrintChar","parameterTypes":[] }]
+},
+{
+  "name":"com.github.sttk.linebreak.TermTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testGetCols","parameterTypes":[] }, {"name":"testGetSize","parameterTypes":[] }]
+},
+{
+  "name":"com.github.sttk.linebreak.UnicodeTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testGetCodepointWidth","parameterTypes":[] }, {"name":"testGetEastAsianWidth","parameterTypes":[] }, {"name":"testGetTextWidth","parameterTypes":[] }, {"name":"testIsPrint_onlyUCS2","parameterTypes":[] }, {"name":"testIsSpace_onlyUCS2","parameterTypes":[] }]
+}
+]
