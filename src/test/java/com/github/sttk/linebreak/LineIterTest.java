@@ -233,6 +233,40 @@ public class LineIterTest {
   }
 
   @Test
+  void testBreakPositionIfIndentContainsFullWidthChars() {
+    var lineWidth = 30;
+    var indent = "__ああ__";  // width is 8.
+    var text = "aaaaa " + "b".repeat(lineWidth - 8) + "c".repeat(lineWidth - 8) + "ddd";
+
+    var iter = new LineIter(text, lineWidth);
+
+    assertThat(iter.hasNext()).isTrue();
+    var line = iter.next();
+    assertThat(line).isEqualTo("aaaaa");
+    assertThat(line).hasSize(5);
+
+    iter.setIndent(indent);
+
+    assertThat(iter.hasNext()).isTrue();
+    line = iter.next();
+    assertThat(line).isEqualTo("__ああ__" + "b".repeat(lineWidth - 8));
+    assertThat(Unicode.getTextWidth(line)).isEqualTo(30);
+
+    assertThat(iter.hasNext()).isTrue();
+    line = iter.next();
+    assertThat(line).isEqualTo("__ああ__" + "c".repeat(lineWidth - 8));
+    assertThat(Unicode.getTextWidth(line)).isEqualTo(30);
+
+    assertThat(iter.hasNext()).isTrue();
+    line = iter.next();
+    assertThat(line).isEqualTo("__ああ__" + "ddd");
+    assertThat(Unicode.getTextWidth(line)).isEqualTo(11);
+
+    assertThat(iter.hasNext()).isFalse();
+    assertThat(iter.next()).isEqualTo("");
+  }
+
+  @Test
   void testInit() {
     var text = "12345678901234567890";
     var iter = new LineIter(text, 12);
