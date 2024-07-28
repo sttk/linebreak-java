@@ -109,6 +109,34 @@ public class LineIter implements Iterator<String> {
   public String next() {
     int limit = this.limit - this.indentCodepointCount;
 
+    if (this.width[0] > limit) {
+        int diff = this.width[0] - limit;
+        this.width[0] = diff;
+        for (int i = this.buffer.length - 1; i >= 0; i--) {
+            int cp = this.buffer.codepoints[i];
+            int cpWidth = Unicode.getCodepointWidth(cp);
+            if (diff <= cpWidth) {
+                String line = trimRightAndToString(this.buffer, 0, i);
+                this.buffer.cr(i);
+                if (! line.isEmpty()) {
+                  line = this.indent + line;
+                }
+                this.hasNext = true;
+                return line;
+            }
+            diff -= cpWidth;
+        }
+    } else if (this.width[0] == limit) {
+        this.width[0] = 0;
+        String line = trimRightAndToString(this.buffer);
+        this.buffer.cr(0);
+        if (! line.isEmpty()) {
+          line = this.indent + line;
+        }
+        this.hasNext = true;
+        return line;
+    }
+
     String line = "";
 
     LboState state = new LboState();

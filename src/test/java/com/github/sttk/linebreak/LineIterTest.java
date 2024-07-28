@@ -199,6 +199,40 @@ public class LineIterTest {
   }
 
   @Test
+  void testBreakPositionAfterIndentWidthIsIncreased() {
+    var lineWidth = 30;
+    var indent = " ".repeat(7);
+    var text = "aaaaa " + "b".repeat(lineWidth - 7) + "c".repeat(lineWidth - 7) + "ddd";
+
+    var iter = new LineIter(text, lineWidth);
+
+    assertThat(iter.hasNext()).isTrue();
+    var line = iter.next();
+    assertThat(line).isEqualTo("aaaaa");
+    assertThat(line).hasSize(5);
+
+    iter.setIndent(indent);
+
+    assertThat(iter.hasNext()).isTrue();
+    line = iter.next();
+    assertThat(line).isEqualTo(" ".repeat(7) + "b".repeat(lineWidth - 7));
+    assertThat(line).hasSize(30);
+
+    assertThat(iter.hasNext()).isTrue();
+    line = iter.next();
+    assertThat(line).isEqualTo(" ".repeat(7) + "c".repeat(lineWidth - 7));
+    assertThat(line).hasSize(30);
+
+    assertThat(iter.hasNext()).isTrue();
+    line = iter.next();
+    assertThat(line).isEqualTo(" ".repeat(7) + "ddd");
+    assertThat(line).hasSize(10);
+
+    assertThat(iter.hasNext()).isFalse();
+    assertThat(iter.next()).isEqualTo("");
+  }
+
+  @Test
   void testInit() {
     var text = "12345678901234567890";
     var iter = new LineIter(text, 12);
