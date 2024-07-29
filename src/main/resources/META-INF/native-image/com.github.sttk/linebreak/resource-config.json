@@ -1,7 +1,9 @@
 {
   "resources":{
   "includes":[{
-    "pattern":"\\Qcom/ibm/icu/impl/data/icudt74b/uprops.icu\\E"
+    "pattern":"\\Qcom/ibm/icu/impl/data/icudt75b/uprops.icu\\E"
+  }, {
+    "pattern":"\\Qjunit-platform.properties\\E"
   }, {
     "pattern":"com.ibm.icu:\\Qcom/ibm/icu/ICUConfig.properties\\E"
   }]},

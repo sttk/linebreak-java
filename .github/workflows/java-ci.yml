@@ -26,7 +26,6 @@ jobs:
       run: mvn package
     - name: Prepare native test
       run: |
-        mkdir -p src/test/resources/META-INF/native-image/
         cp .ci/${{ matrix.os }}/resource-config.json src/test/resources/META-INF/native-image/
     - name: Native test
       run: mvn -Pnative test
