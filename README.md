@@ -15,7 +15,7 @@ The examples of declaring that repository and the dependency on this package in 
     <dependency>
       <groupId>io.github.sttk</groupId>
       <artifactId>linebreak</artifactId>
-      <version>0.1.4</version>
+      <version>0.1.5</version>
     </dependency>
   </dependencies>
 ```
@@ -27,7 +27,7 @@ repositories {
   mavenCentral()
 }
 dependencies {
-  implementation 'io.github.sttk:linebreak:0.1.4'
+  implementation 'io.github.sttk:linebreak:0.1.5'
 }
 ```
 
@@ -84,8 +84,8 @@ This framework supports JDK 21 or later.
 
 ### Actually checked JDK versions:
 
-- GraalVM CE 21.0.2+13.1 (openjdk version 21.0.2)
-- GraalVM CE 22.0.1+8.1 (openjdk version 22.0.1)
+- GraalVM 21.0.4+8.1 (java version "21.0.4" 2024-07-16 LTS)
+- GraalVM 22.0.2+9.1 (java version "22.0.2" 2024-07-16)
 
 ## License
 
@@ -96,8 +96,8 @@ See the file LICENSE in this distribution for more details.
 
 
 [repo-url]: https://github.com/sttk/linebreak-java
-[mvn-img]: https://img.shields.io/badge/maven_central-0.1.4-276bdd.svg
-[mvn-url]: https://central.sonatype.com/artifact/io.github.sttk/linebreak/0.1.4
+[mvn-img]: https://img.shields.io/badge/maven_central-0.1.5-276bdd.svg
+[mvn-url]: https://central.sonatype.com/artifact/io.github.sttk/linebreak/0.1.5
 [io-img]: https://img.shields.io/badge/github.io-Javadoc-4d7a97.svg
 [io-url]: https://sttk.github.io/linebreak-java/
 [ci-img]: https://github.com/sttk/linebreak-java/actions/workflows/java-ci.yml/badge.svg?branch=main
